@@ -37,17 +37,27 @@ function App() {
 
   return (
     <>
-      <div className="score">Score: {score}</div>
-      <div className="high-score">Highscore: {highScore}</div>
-      {urlId.map((id) => (
-        <Card
-          imgId={id.url}
-          key={id.url}
-          fn={() => {
-            cardClickHandler(id);
-          }}
-        ></Card>
-      ))}
+      <header>
+        <div className="left-side-head">
+          <p className="title">Skele Card Game!</p>
+          <p className="desc">Do not click the same card more than one time.</p>
+        </div>
+        <div className="right-side-head">
+          <p className="score">Score: {score}</p>
+          <p className="high-score">Highscore: {highScore}</p>
+        </div>
+      </header>
+      <div className="card-container">
+        {urlId.map((id) => (
+          <Card
+            imgId={id.url}
+            key={id.url}
+            fn={() => {
+              cardClickHandler(id);
+            }}
+          ></Card>
+        ))}
+      </div>
     </>
   );
 }
