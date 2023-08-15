@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 function Card({ imgId, fn }) {
-  const [isClicked, setIsClicked] = useState(false);
   const [img, setImg] = useState("");
 
   useEffect(() => {
@@ -9,7 +8,8 @@ function Card({ imgId, fn }) {
     const fetchImage = async () => {
       const response = await fetch(fetchURL);
       const imageJson = await response.json();
-      const image = imageJson.data.images.original.url;
+      // const image = imageJson.data.images.original.url;
+      const image = imageJson.data.images.original_still.url;
       console.log("API CALL.");
       setImg(image);
     };
