@@ -18,15 +18,33 @@ const urlIds = randomCardOrder([
 
 function App() {
   const [urlId, setUrlIds] = useState(urlIds);
+  const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
+  function cardClickHandler(data) {
+    if (!data.isClicked) {
+      setScore(score + 1);
+      data.isClicked = true;
+    } else {
+      if (score > highScore) setHighScore(score);
+      setScore(0);
+      urlId.forEach((obj) => {
+        obj.isClicked = false;
+      });
+    }
+    setUrlIds(randomCardOrder(urlId));
+  }
 
   return (
     <>
+      <div className="score">Score: {score}</div>
+      <div className="high-score">Highscore: {highScore}</div>
       {urlId.map((id) => (
         <Card
-          imgId={id}
-          key={id}
+          imgId={id.url}
+          key={id.url}
           fn={() => {
-            setUrlIds(randomCardOrder(urlId));
+            cardClickHandler(id);
           }}
         ></Card>
       ))}
