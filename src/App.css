@@ -1,9 +1,8 @@
 #root {
-  /* max-width: 1280px; */
-
-  background-color: rgb(66, 66, 66);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
 * {
   padding: 0;
   margin: 0;
@@ -14,9 +13,40 @@ img {
   background-color: darkgray;
   padding: 5px;
   object-fit: cover;
+  border: solid rgb(216, 157, 157) 1px;
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+header {
+  display: flex;
+  color: white;
+  justify-content: center;
+  gap: 200px;
+  padding: 10px;
+  border-bottom: solid rgb(216, 157, 157) 1px;
+}
+
+.title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.desc {
+  font-size: small;
+  font-style: italic;
+}
+
+.right-side-head {
+  font-weight: bold;
+
+  color: rgb(255, 94, 0);
+}
+
+.high-score {
 }
