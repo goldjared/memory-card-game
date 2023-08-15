@@ -4,16 +4,16 @@ import { Card } from "./components/card";
 import { randomCardOrder } from "./logic";
 
 const urlIds = randomCardOrder([
-  "YwAgyCddum3K0",
-  "QuxqWk7m9ffxyfoa0a",
-  "ighdr7xNaVwwQtUkP0",
-  "h8OX1iXpgYoH1wIkHE",
-  "5zI213WKIL2uI",
-  "3pQA6Uba4Argk",
-  "jpbAaUG7cjkZy",
-  "qTD9EXZRgI1y0",
-  "XcL6a7YHm4sWA",
-  "kBrY0BlY4C4jhBeubb",
+  { url: "YwAgyCddum3K0", isClicked: false },
+  { url: "QuxqWk7m9ffxyfoa0a", isClicked: false },
+  { url: "ighdr7xNaVwwQtUkP0", isClicked: false },
+  { url: "XcL6a7YHm4sWA", isClicked: false },
+  { url: "kBrY0BlY4C4jhBeubb", isClicked: false },
+  { url: "qTD9EXZRgI1y0", isClicked: false },
+  { url: "jpbAaUG7cjkZy", isClicked: false },
+  { url: "3pQA6Uba4Argk", isClicked: false },
+  { url: "5zI213WKIL2uI", isClicked: false },
+  { url: "h8OX1iXpgYoH1wIkHE", isClicked: false },
 ]);
 
 function App() {
